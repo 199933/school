@@ -2,45 +2,17 @@
   <div>
     <div class="box">
       <div class="wrapper">
-        <form class="form-horizontal" role="form">
-          <div class="form-group">
-            <label for="firstname" class="col-sm-2 control-label">账号</label>
-            <div class="col-sm-10">
-              <input v-model="content.num" type="text" class="form-control InputW" id="firstname" placeholder="请输入账号" v-focus>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="lastname" class="col-sm-2 control-label">密码</label>
-            <div class="col-sm-10">
-              <input v-model="content.password" type="password" class="form-control InputW" id="lastname" placeholder="请输入密码">
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox">请记住我
-                </label>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" class="btn btn-primary btn-WZ" @click="myEmit">登录</button>
-            </div>
-          </div>
-        </form>
+
+        <transition mode="out-in">
+          <router-view></router-view>
+        </transition>
       </div>
     </div>
     
     <div class="btn-group btn-group-lg bothBtn"> 
-        <router-link to="/login" class="btn btn-lg btn-default Diybtn">登录</router-link>
-        <router-link to="/register" class="btn btn-lg btn-default Diybtn">注册</router-link>
+        <router-link to="/login/mainLogin" class="btn btn-lg btn-default Diybtn">登录</router-link>
+        <router-link to="/login/mainRegister" class="btn btn-lg btn-default Diybtn">注册</router-link>
     </div>
-    
-    <!-- <transition mode="out-in">
-    <router-view></router-view>
-    </transition> -->
   </div>
 </template>
 

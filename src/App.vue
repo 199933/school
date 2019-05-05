@@ -43,55 +43,14 @@
     </div>
 
 
-    <transition mode="out-in">
+    <!-- <transition mode="out-in"> -->
      <router-view></router-view>    
-    </transition>
+    <!-- </transition> -->
   </div>
 </template>
 
 <script>
 export default {
-//   data() {
-//     return {
-//       show : true
-//     }
-//   },
-//   created(){
-//     this.$on('my-event',(arg) => { 
-//         this.show= arg; // 接收
-//     })
-//   },
-//   // methods:{
-//   //   getMyEvent(){
-
-//   //   }
-//   // },
-//   directives: {
-//     // 设置字体加粗
-//     focus: {
-//       inserted: function(el) {
-//         el.focus();
-//       }
-//     }
-//   }
-// };
-        // data() {
-        //     return {
-        //     }
-        // },
-        // mounted() {
-        //     this.redirectLogin();
-        // },
-        // watch: {
-        //     "$route": "redirectLogin",
-        // },
-        // methods: {
-        //     redirectLogin() {
-               
-        //             this.$router.push('/login');
-               
-        //     }
-        // }
     data() {
     return {
       activeIndex: "1",
@@ -102,8 +61,11 @@ export default {
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
     },
-  }
+  },
+  mounted() {
+       this.$router.push('/login/mainLogin');
     }
+}
 </script>
 
 <style scoped>

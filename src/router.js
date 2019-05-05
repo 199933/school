@@ -2,8 +2,8 @@
 
 import VueRouter from "vue-router"
 // Main
-import account from "./main/account.vue"
-import goodslist from "./main/Goodslist.vue"
+import mainLogin from "./main/mainLogin.vue"
+import mainRegister from "./main/mainRegister.vue"
 // sub
 import login from "./sub/login.vue"
 import register from "./sub/register.vue"
@@ -19,14 +19,15 @@ let router = new VueRouter({
         //     {path:'register',component:register},
         // ]},
         // {path:'/goodslist',component:goodslist},
-        {path:'/',redirect:'/login'},
-        {path:'/login',component:login},
+        {path:'/',redirect:'/login/mainLogin'},
+        {path:'/login',component:login,
+        children:[
+            {path : 'mainLogin',component : mainLogin},
+            {path : 'mainRegister',component : mainRegister}
+        ]},
         {path:'/register',component:register},
         {path:'/zhuye',component:zhuye},
-        {path:'/buy',component:buy,children:[
-            {path:'account',component:account},
-            // {path:'register',component:register},
-        ]},
+        {path:'/buy',component:buy},
     ]
 })
 
